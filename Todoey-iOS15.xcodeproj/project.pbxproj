@@ -14,6 +14,7 @@
 		A65516002891C670002C14C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A65515FF2891C670002C14C0 /* Assets.xcassets */; };
 		A65516032891C670002C14C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A65516012891C670002C14C0 /* LaunchScreen.storyboard */; };
 		A655160E2891C716002C14C0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A655160D2891C716002C14C0 /* Item.swift */; };
+		A65516312891CE41002C14C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65516302891CE41002C14C0 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A65516022891C670002C14C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A65516042891C670002C14C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A655160D2891C716002C14C0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A65516302891CE41002C14C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				A65515F32891C66B002C14C0 /* AppDelegate.swift */,
+				A65516302891CE41002C14C0 /* SceneDelegate.swift */,
 				A655160A2891C6C0002C14C0 /* Controllers */,
 				A655160F2891C71A002C14C0 /* Data Model */,
 				A655160C2891C6F9002C14C0 /* Views */,
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A65516312891CE41002C14C0 /* SceneDelegate.swift in Sources */,
 				A655160E2891C716002C14C0 /* Item.swift in Sources */,
 				A65515F82891C66B002C14C0 /* TodoListViewController.swift in Sources */,
 				A65515FE2891C66B002C14C0 /* Todoey_iOS15.xcdatamodeld in Sources */,
