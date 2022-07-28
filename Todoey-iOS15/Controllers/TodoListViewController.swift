@@ -95,6 +95,7 @@ class TodoListViewController: UITableViewController {
     
     func loadItems() {
         if let data = try? Data(contentsOf: dataFilePath!){
+            //To take out the data
             let decoder = PropertyListDecoder()
             do {
                 itemArray = try decoder.decode([Item].self, from: data)
