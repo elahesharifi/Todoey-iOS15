@@ -1,14 +1,24 @@
+//
+//  SceneDelegate.swift
+//  Todoey
+//
+//  Created by Elahe  Sharifi on 27/07/2022.
+//
+
 import UIKit
 
 class TodoListViewController: UITableViewController {
 
     var itemArray = ["Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron"]
-    
+   // var itemArray = [Item]()
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let newItem = Item()
+//        newItem.title = "Find Mike"
+//        itemArray.append(newItem)
         if let items = defaults.array(forKey: "TodoListArray") as? [String] {
             itemArray = items
         }
@@ -30,7 +40,7 @@ class TodoListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //print(itemArray[indexPath.row])
        
-       
+
         if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
             tableView.cellForRow(at: indexPath)?.accessoryType = .none
         }else
@@ -43,7 +53,6 @@ class TodoListViewController: UITableViewController {
     
     //MARK: - Add New Items
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-        
         var textField = UITextField()
         
         let alert = UIAlertController(title: "Add New Todoey Item", message: "", preferredStyle: .alert)
