@@ -8,9 +8,9 @@
 import UIKit
 
 class TodoListViewController: UITableViewController {
-
-   // var itemArray = ["Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron"]
-   var itemArray = [Item]()
+    
+    // var itemArray = ["Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron","Find Mike", "Buy Eggos", "Destroy Demogoron"]
+    var itemArray = [Item]()
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -18,37 +18,41 @@ class TodoListViewController: UITableViewController {
         
         let newItem = Item()
         newItem.title = "Find Mike"
-        itemArray.append(newItem)
-//        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
-//            itemArray = items
-//        }
+        //newItem.done = true
+        let newItem2 = Item()
+        newItem2.title = "121312313"
+        
     }
-//MARK: - Tableview Datasource Methods
+    //MARK: - Tableview Datasource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArray.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+       
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath
         )
+        let item = itemArray[indexPath.row]
         cell.textLabel?.text = itemArray[indexPath.row].title
+        
+        //Ternary operator ==>
+        // value = condition ? valueIfTrue : valueIfFalse
+        
+        cell.accessoryType = item.done ? .checkmark : .none
+        
         return cell
     }
     
-//MARK: - TableView Delegate Methods
+    //MARK: - TableView Delegate Methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //print(itemArray[indexPath.row])
-       
-
-        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
-        }else
-        {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        }
         
-       tableView.deselectRow(at: indexPath, animated: false)
+        itemArray[indexPath.row].done = !itemArray[indexPath.row].done
+
+        tableView.reloadData()
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     //MARK: - Add New Items
