@@ -15,9 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="ZlQ-rE-gFV">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="Kx8-O3-tHy" id="SJg-Da-ohF"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoItemCell" id="NVn-4Q-xrL">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="68.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NVn-4Q-xrL" id="Evi-7g-TIf">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -33,9 +41,6 @@
                     <navigationItem key="navigationItem" title="Todoey" id="SAN-ZN-vbI">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FC3-R9-4qQ">
                             <color key="tintColor" red="0.93725490199999995" green="0.85490196080000003" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="addButtonPressed:" destination="Kx8-O3-tHy" id="Uug-zi-S6A"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
