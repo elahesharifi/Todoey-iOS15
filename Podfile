@@ -6,6 +6,6 @@ target 'Todoey-iOS15' do
 
   # Pods for Todoey-iOS15
 
-pod 'RealmSwift'
+pod 'RealmSwift' , '10.25.2'
 
 end
