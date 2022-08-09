@@ -116,5 +116,9 @@ func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPat
     
     return [deleteAction]
 }
-
+    func collectionView(_ collectionView: UICollectionView, editActionsOptionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        return options
+    }
 }
